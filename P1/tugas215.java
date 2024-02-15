@@ -12,13 +12,6 @@ public class tugas215 {
         System.out.println("Program Menghitung Rumus");
         System.out.println("========================");
 
-        // System.out.println("Masukkan Kecepatan : ");
-        // double kecepatan = sc15.nextInt();
-        // System.out.println("Masukkan Jarak : ");
-        // double jarak = sc15.nextInt();
-        // System.out.println("Masukkan Waktu : ");
-        // double waktu = sc15.nextInt();
-
         System.out.println("1. Kecepatan");
         System.out.println("2. Jarak");
         System.out.println("3. Waktu");
