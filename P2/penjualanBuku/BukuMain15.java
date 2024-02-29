@@ -23,5 +23,7 @@ public class BukuMain15 {
         bk1.tampilInformasi();
 
         bk2.tampilInformasi();
+        bk2.terjual(4); 
+        bk2.tampilInformasi();
     }
 }
