@@ -45,7 +45,9 @@ public class Buku15 {
         harga = hrg;
     }
 
+    public Buku15() {
 
+    }
 
     public Buku15(String jud, String pg, int hal, int stok, int har){
         judul = jud;
