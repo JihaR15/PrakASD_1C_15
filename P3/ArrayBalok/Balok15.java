@@ -14,4 +14,10 @@ public class Balok15 {
     public int hitungVolume() {
         return panjang * lebar * tinggi;
     }
+
+    public int hitungLuasPersegi(int p, int l) {
+        panjang = p;
+        lebar = l;
+        return panjang * lebar;
+    }
 }
