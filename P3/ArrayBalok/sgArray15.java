@@ -9,5 +9,9 @@ public class sgArray15 {
         sgArray[2] = new Segitiga15(15, 6);
         sgArray[3] = new Segitiga15(25, 10);
 
+        for (int i = 0; i < sgArray.length; i++) {
+            System.out.println("Luas segitiga ke-" + i + ": " + sgArray[i].hitungLuas());
+            System.out.println("Keliling segitiga ke-" + i + ": " + sgArray[i].hitungKeliling());
+        }
     }
 }
