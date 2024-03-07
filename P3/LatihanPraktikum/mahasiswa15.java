@@ -33,4 +33,29 @@ public class mahasiswa15 {
         System.out.println("");
     }
 
+    public static double hitungRataIpk(mahasiswa15[] mhs) {
+        double totalIpk = 0;
+        for (int i = 0; i < mhs.length; i++) {
+            totalIpk += mhs[i].ipk;
+        }
+        return totalIpk / mhs.length;
+    }
+
+    public static void tampilkanDataMaxIpk(mahasiswa15[] mhs) {
+        double maxIpk = mhs[0].ipk;
+        int indexMax = 0;
+        for (int i = 1; i < mhs.length; i++) {
+            if (mhs[i].ipk > maxIpk) {
+                maxIpk = mhs[i].ipk;
+                indexMax = i;
+            }
+        }
+        System.out.println("\n== Data Mahasiswa dengan IPK terbesar:");
+        System.out.println("Nama: " + mhs[indexMax].nama);
+        System.out.println("NIM: " + mhs[indexMax].nim);
+        System.out.println("Jenis Kelamin: " + mhs[indexMax].jenis_kelamin);
+        System.out.println("IPK: " + mhs[indexMax].ipk);
+        System.out.println("");
+    }
+
 }
