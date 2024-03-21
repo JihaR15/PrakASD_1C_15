@@ -18,17 +18,30 @@ public class MainPangkat15 {
             png15[i] = new Pangkat15(nilai, pangkat);
         }
 
-        System.out.println("HASIL PANGKAT - BRUTE FORCE");
-        for (int i = 0; i < elemen; i++) {
-            System.out.println("Hasil dari " + png15[i].nilai + 
-            " pangkat " + png15[i].pangkat + 
-            " adalah " + png15[i].pangkatBF(png15[i].nilai, png15[i].pangkat));
-        }
-        System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
-        for (int i = 0; i < elemen; i++) {
-            System.out.println("Hasil dari " + png15[i].nilai + 
-            " pangkat " + png15[i].pangkat + 
-            " adalah " + png15[i].pangkatDC(png15[i].nilai, png15[i].pangkat));
+        System.out.println("=============================");
+        System.out.println("1. Brute Force");
+        System.out.println("2. Divide and Conquer");
+        System.out.print("Pilih cara Hitung: (1/2) : ");
+        int input = sc15.nextInt();
+
+        switch (input) {
+            case 1:
+            System.out.println("HASIL PANGKAT - BRUTE FORCE");
+            for (int i = 0; i < elemen; i++) {
+                System.out.println("Hasil dari " + png15[i].nilai + 
+                " pangkat " + png15[i].pangkat + 
+                " adalah " + png15[i].pangkatBF(png15[i].nilai, png15[i].pangkat));
+            }                
+                break;
+            case 2:
+            System.out.println("HASIL PANGKAT - DIVIDE AND CONQUER");
+            for (int i = 0; i < elemen; i++) {
+                System.out.println("Hasil dari " + png15[i].nilai + 
+                " pangkat " + png15[i].pangkat + 
+                " adalah " + png15[i].pangkatDC(png15[i].nilai, png15[i].pangkat));
+            }        
+            default:
+                break;
         }
     }
 }
