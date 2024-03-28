@@ -49,4 +49,18 @@ public class DaftarBuku15 {
         }
     }
 
+    // Percobaan 3
+
+    void  insertionSort() {
+        for (int i = 1; i < listBk.length; i++) {
+            Buku15 temp = listBk[i];
+            int j = i;
+            while (j > 0 && listBk[j - 1].stock > temp.stock) {
+                listBk[j] = listBk[j - 1];
+                j--;
+            }
+            listBk[j] = temp;
+        }
+    }
+
 }
