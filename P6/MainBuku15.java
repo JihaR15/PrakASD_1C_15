@@ -23,5 +23,13 @@ public class MainBuku15 {
         listBuku.bubbleSort();
         listBuku.tampil();
 
+        // Percobaan 2
+
+        System.out.println("==========================");
+        System.out.println("Data Setelah diurutkan secara Desc berdasarkan stock Menggunakan Selection Sort");
+        listBuku.selectionSort();
+        listBuku.tampil();
+
+
     }
 }

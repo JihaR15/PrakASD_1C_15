@@ -31,4 +31,22 @@ public class DaftarBuku15 {
         }
     }
 
+    // Percobaan 2
+
+    void selectionSort() {
+        for (int i = 0; i < listBk.length - 1; i++) {
+            int idxMin = i;
+            for (int j = i + 1; j < listBk.length; j++) {
+                if (listBk[j].stock > listBk[idxMin].stock) { // lebih dari
+                    idxMin = j; //awalnya i, biar fix diganti j
+                }
+            }
+
+            //swap 
+            Buku15 tempBuku = listBk[idxMin];
+            listBk[idxMin] = listBk[i];
+            listBk[i] = tempBuku;
+        }
+    }
+
 }
