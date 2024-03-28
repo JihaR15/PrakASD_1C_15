@@ -33,7 +33,7 @@ public class MainBuku15 {
         // Percobaan 3
 
         System.out.println("==========================");
-        System.out.println("Data Setelah diurutkan secara Asc berdasarkan stock Menggunakan Insertion Sort");
+        System.out.println("Data Setelah diurutkan secara Desc berdasarkan stock Menggunakan Insertion Sort");
         listBuku.insertionSort();
         listBuku.tampil();
     }
