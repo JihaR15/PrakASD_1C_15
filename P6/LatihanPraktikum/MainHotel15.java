@@ -16,12 +16,22 @@ public class MainHotel15 {
 
         System.out.println("\n==================================================");
         System.out.println("Sorting menggunakan Bubble Sort berdasarkan harga: (ASC)");
-        service.bubbleSort();
+        service.bubbleSort(1);
+        service.tampilAll();
+
+        System.out.println("\n==================================================");
+        System.out.println("Sorting menggunakan Bubble Sort berdasarkan bintang: (DESC)");
+        service.bubbleSort(2);
+        service.tampilAll();
+
+        System.out.println("\n=======================================================");
+        System.out.println("Sorting menggunakan Selection Sort berdasarkan harga: (ASC)");
+        service.selectionSort(1);
         service.tampilAll();
 
         System.out.println("\n=======================================================");
         System.out.println("Sorting menggunakan Selection Sort berdasarkan bintang: (DESC)");
-        service.selectionSort();
+        service.selectionSort(2);
         service.tampilAll();
     }
 }
