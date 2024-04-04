@@ -43,6 +43,11 @@ public class BukuMain15 {
         data.TampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
 
+        // PERCOBAAN 1 : pertanyaan 3
+
+        Buku15 dataBuku = data.FindBuku(cari);
+        dataBuku.tampilDataBuku();
+
 
     }
 }

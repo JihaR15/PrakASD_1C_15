@@ -50,4 +50,17 @@ public class PencarianBuku15 {
         }
     }
 
+    // PERCOBAAN 1 : pertanyaan 3
+    
+    public Buku15 FindBuku(int cari) {
+        int posisi = -1;
+        for (int i = 0; i < listBK.length; i++) {
+            if (listBK[i].kodeBuku == cari) {
+                posisi = i;
+                break;
+            }
+        }
+        return listBK[posisi];
+    }
+
 }
