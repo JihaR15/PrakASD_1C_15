@@ -29,11 +29,11 @@ public class BukuMain15 {
         //     data.tambah(m);
         // }
 
-        // dari inputan diganti ke data manual langsung di sourcce code nya pakai parameter
+        // dari inputan diganti ke isi langsung di sourcce code nya pakai parameter
 
         Buku15 m = new Buku15("20215", "Algoritma", 2019, "Wahyuni", 5);
         Buku15 m1 = new Buku15("20214", "Big Data", 2020, "Susilo", 3);
-        Buku15 m2 = new Buku15("20212", "Desain UI", 2021, "Supriadi", 3);
+        Buku15 m2 = new Buku15("20212", "Algoritma", 2021, "Supriadi", 3);
         Buku15 m3 = new Buku15("20211", "Web Programming", 2022, "Pustaka Adi", 3);
         Buku15 m4 = new Buku15("20210", "Etika Mahasiswa", 2023, "Darmawan Adi", 3);
 
@@ -72,6 +72,43 @@ public class BukuMain15 {
         posisi = data.FindBinarySearchString(cari, 0, jumBuku - 1);
         data.TampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
+
+        System.out.println("========================================");
+        System.out.println("Pencarian Data : ");
+        System.out.println("Masukkan Judul yang ingin dicari : ");
+        String cari2;
+        
+        // kalau judul buku yang diinputkan ternyata di data nya ada lebih dari satu,
+        // maka akan muncul peringatan 
+        // dan program akan menanyakan lagi judul buku yang ingin dicari
+            
+        while (true) { 
+            System.out.print("Judul Buku : "); 
+            cari2 = s15.nextLine(); 
+    
+            if (data.duplikatJudul(cari2)) {
+                System.out.println("Data yang Anda cari ada lebih dari satu!!");               
+            } else {
+                break;
+            }
+            
+        }
+
+        System.out.println("Menggunakan Sequential Search");
+        int posisi2 = data.FindSeqSearchJudul(cari2);
+        data.TampilPosisiJudul(cari2, posisi2);
+        data.TampilDatajudul(cari2, posisi2);  
+
+        System.out.println("========================================");
+        System.out.println("Data diurutkan terlebih dahulu untuk menggunakan Binary Search");
+        data.insertionSort();
+        data.tampil();
+
+        System.out.println("========================================");
+        System.out.println("Menggunakan Binary Search");
+        posisi2 = data.FindBinarySearchJudul(cari2);
+        data.TampilPosisiJudul(cari2, posisi2);
+        data.TampilDatajudul(cari2, posisi2);
 
     }
 }

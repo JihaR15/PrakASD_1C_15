@@ -143,4 +143,81 @@ public class PencarianBuku15 {
         }
         return -1;  
     }
+
+    // ===== Latihan Praktikum 2 ======= //
+
+    public void insertionSort() {
+        for (int i = 1; i < listBK.length; i++) {
+            Buku15 temp = listBK[i];
+            int j = i - 1;
+            while (j >= 0 && listBK[j].judulBuku.compareTo(temp.judulBuku) > 0) {
+                listBK[j +1] = listBK[j];
+                j--;
+            }
+            listBK[j + 1] = temp;
+        }
+    }
+
+    public int FindSeqSearchJudul(String cari) {
+        int posisi = -1;
+        for (int i = 0; i < listBK.length; i++) {
+            if (listBK[i].judulBuku.equals(cari)) {
+                posisi = i;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    public int FindBinarySearchJudul(String cari) {
+        int left = 0;
+        int right = listBK.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int comparison = cari.compareTo(listBK[mid].judulBuku);
+            
+            if (comparison == 0) {
+                return mid;
+            } else if (comparison < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    public void TampilPosisiJudul(String x, int pos) {
+        if (pos!= -1) {
+            System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
+        } else {
+            System.out.println("Data : " + x + " tidak ditemukan");
+        }
+    }
+
+    public void TampilDatajudul(String x, int pos) {
+        if (pos!= -1) {
+            System.out.println("Kode Buku\t : " + listBK[pos].kodeBuku);
+            System.out.println("Judul Buku\t : " + x);
+            System.out.println("Tahun Terbit\t : " + listBK[pos].tahunTerbit);
+            System.out.println("Pengarang\t : " + listBK[pos].pengarang);
+            System.out.println("Stock\t\t : " + listBK[pos].stock);
+        } else {
+            System.out.println("Data : " + x + " tidak ditemukan");
+        }
+    }
+
+    public boolean duplikatJudul(String cari) {
+        int count = 0;
+        for (int i = 0; i < listBK.length - 1; i++) {
+            if (listBK[i].judulBuku.equals(cari)) {
+                count++;
+            }
+            if (count > 1) {
+             return true;   
+            }
+        }
+        return false;
+    }
 }
