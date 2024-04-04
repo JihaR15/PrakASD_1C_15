@@ -71,7 +71,7 @@ public class PencarianBuku15 {
             mid = (left + right) / 2;
             if (cari == listBK[mid].kodeBuku) {
                 return (mid);
-            } else if (listBK[mid].kodeBuku > cari) {
+            } else if (listBK[mid].kodeBuku < cari) { //Descending
                 return FindBinarySearch(cari, left, mid - 1);
             } else {
                 return FindBinarySearch(cari, mid + 1, right);
