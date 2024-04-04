@@ -19,18 +19,73 @@ public class PencarianBuku15 {
         }
     }
 
-    public int FindSeqSearch(int cari) {
-        int posisi = -1;
-        for (int i = 0; i < listBK.length; i++) {
-            if (listBK[i].kodeBuku==cari) {
-                posisi = i;
-                break;
-            }
-        }
-        return posisi;
-    }
+    // public int FindSeqSearch(int cari) {
+    //     int posisi = -1;
+    //     for (int i = 0; i < listBK.length; i++) {
+    //         if (listBK[i].kodeBuku.equals(cari)) {
+    //             posisi = i;
+    //             break;
+    //         }
+    //     }
+    //     return posisi;
+    // }
 
-    public void TampilPosisi(int x, int pos) {
+
+    // public void TampilPosisi(int x, int pos) {
+    //     if (pos!= -1) {
+    //         System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
+    //     } else {
+    //         System.out.println("Data : " + x + " tidak ditemukan");
+    //     }
+    // }
+
+    // public void TampilData(int x, int pos) {
+    //     if (pos!= -1) {
+    //         System.out.println("Kode Buku\t : " + x);
+    //         System.out.println("Judul Buku\t : " + listBK[pos].judulBuku);
+    //         System.out.println("Tahun Terbit\t : " + listBK[pos].tahunTerbit);
+    //         System.out.println("Pengarang\t : " + listBK[pos].pengarang);
+    //         System.out.println("Stock\t\t : " + listBK[pos].stock);
+    //     } else {
+    //         System.out.println("Data : " + x + " tidak ditemukan");
+    //     }
+    // }
+
+    // PERCOBAAN 1 : pertanyaan 3
+    
+    // public Buku15 FindBuku(int cari) {
+    //     int posisi = -1;
+    //     for (int i = 0; i < listBK.length; i++) {
+    //         if (listBK[i].kodeBuku == cari) {
+    //             posisi = i;
+    //             break;
+    //         }
+    //     }
+    //     return listBK[posisi];
+    // }
+
+    // PERCOBAAN 2
+
+    // public int FindBinarySearch(String cari, int left, int right) {
+    //     int mid;
+    //     if (right >= left) {
+    //         mid = (left + right) / 2;
+
+    //         int comparison = cari.compareTo(listBK[mid].kodeBuku);
+    //         if (comparison == 0) {
+    //             return (mid);
+    //         } else if (comparison < 0) { //Descending
+    //             return FindBinarySearch(cari, left, mid - 1);
+    //         } else {
+    //             return FindBinarySearch(cari, mid + 1, right);
+    //         }
+    //     }
+    //     return -1;  
+    // }
+
+    // ===== Latihan Praktikum ======= // 
+
+    public void TampilPosisi(String x, int pos) {
         if (pos!= -1) {
             System.out.println("Data : " + x + " ditemukan pada indeks " + pos);
         } else {
@@ -38,7 +93,7 @@ public class PencarianBuku15 {
         }
     }
 
-    public void TampilData(int x, int pos) {
+    public void TampilData(String x, int pos) {
         if (pos!= -1) {
             System.out.println("Kode Buku\t : " + x);
             System.out.println("Judul Buku\t : " + listBK[pos].judulBuku);
@@ -50,12 +105,10 @@ public class PencarianBuku15 {
         }
     }
 
-    // PERCOBAAN 1 : pertanyaan 3
-    
-    public Buku15 FindBuku(int cari) {
+    public Buku15 FindBuku(String cari) {
         int posisi = -1;
         for (int i = 0; i < listBK.length; i++) {
-            if (listBK[i].kodeBuku == cari) {
+            if (listBK[i].kodeBuku.equals(cari)) {
                 posisi = i;
                 break;
             }
@@ -63,18 +116,29 @@ public class PencarianBuku15 {
         return listBK[posisi];
     }
 
-    // PERCOBAAN 2
+    public int FindSeqSearchString(String cari) {  
+            int posisi = -1;
+            for (int i = 0; i < listBK.length; i++) {
+                if (listBK[i].kodeBuku.equals(cari)) {
+                    posisi = i;
+                    break;
+                }
+            }
+            return posisi;
+        }
 
-    public int FindBinarySearch(int cari, int left, int right) {
+    public int FindBinarySearchString(String cari, int left, int right) {
         int mid;
         if (right >= left) {
             mid = (left + right) / 2;
-            if (cari == listBK[mid].kodeBuku) {
+
+            int comparison = cari.compareTo(listBK[mid].kodeBuku);
+            if (comparison == 0) {
                 return (mid);
-            } else if (listBK[mid].kodeBuku < cari) { //Descending
-                return FindBinarySearch(cari, left, mid - 1);
+            } else if (comparison > 0) { //descending
+                return FindBinarySearchString(cari, left, mid - 1);
             } else {
-                return FindBinarySearch(cari, mid + 1, right);
+                return FindBinarySearchString(cari, mid + 1, right);
             }
         }
         return -1;  
