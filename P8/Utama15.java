@@ -13,12 +13,14 @@ public class Utama15 {
         Gudang15 gudang = new Gudang15(jmlBarang);
 
         while (true) {
-            System.out.println("Menu:");
+            System.out.println("\nMenu:");
             System.out.println("1. Tambah Barang");
             System.out.println("2. Ambil Barang");
             System.out.println("3. Tampilkan tumpukan Barang");
             System.out.println("4. Lihat Barang Teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat Barang Terbawah");
+            System.out.println("6. Cari Barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih Operasi: ");
             int pilihan = scanner15.nextInt();
             scanner15.nextLine();
@@ -45,6 +47,12 @@ public class Utama15 {
                     gudang.lihatBarangTeratas();
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                case 6:
+                    gudang.cariBarang();
+                    break;
+                case 7:
                     System.exit(0); // di jobsheet hanya break saja, jadi otomatis looping lagi, tidak keluar
                 default:
                     System.out.println("Pilihan tidak valid. Silakan coba lagi");

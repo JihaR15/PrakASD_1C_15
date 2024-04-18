@@ -1,9 +1,12 @@
 package P8;
 
+import java.util.Scanner;
+
 public class Gudang15 {
     Barang15[] tumpukan;
     int size;
     int top;
+    static Scanner sc15 = new Scanner(System.in);
 
     public Gudang15(int kapasitas) {
         size = kapasitas;
@@ -87,5 +90,36 @@ public class Gudang15 {
             biner += stack.pop();
         }
         return biner;
+    }
+
+    //Latihan Praktikum
+    public Barang15 lihatBarangTerbawah(){
+        if (!cekKosong()) {
+            Barang15 barangTerbawah = tumpukan[0]; // Barang terbawah berada di indeks 0
+            System.out.println("Barang terbawah: " + barangTerbawah.nama);
+            return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+    }
+
+    public Barang15 cariBarang(){
+        if (!cekKosong()) {
+            System.out.print("Masukkan kode Barang: ");
+            int kode = sc15.nextInt();
+            for (int i = top; i >= 0; i--) {
+                if (tumpukan[i].kode == kode) {
+                    System.out.println("Barang dengan kode " + kode + " ditemukan: " + tumpukan[i].nama);
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang dengan kode " + kode + " tidak ditemukan.");
+            return null;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+
     }
 }
