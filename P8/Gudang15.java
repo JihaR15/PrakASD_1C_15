@@ -77,7 +77,7 @@ public class Gudang15 {
     // Percobaan 2
     public String konversiDesimaKeBiner(int kode) {
         StackKonversi15 stack = new StackKonversi15();
-        while (kode > 0){
+        while (kode != 0){
             int sisa = kode % 2;
             stack.push(sisa);
             kode = kode / 2;
