@@ -35,7 +35,7 @@ public class Utama15 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
-                    System.exit(0);
+                    System.exit(0); // di jobsheet hanya break saja, jadi otomatis looping lagi, tidak keluar
                 default:
                     System.out.println("Pilihan tidak valid. Silakan coba lagi");
             }
