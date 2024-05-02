@@ -11,6 +11,7 @@ public class QueueMain {
         System.out.println("4. Cek Antrian terbelakang");
         System.out.println("5. Cek Posisi Pembeli (Berdasarkan Nama)");
         System.out.println("6. Cek Semua Antrian");
+        System.out.println("7. Cek Semua Data Pembeli");
         System.out.println("-------------------------");
     }
 
@@ -56,9 +57,12 @@ public class QueueMain {
                 case 6:
                     antri15.print();
                     break;
+                case 7:
+                    antri15.daftarPembeli();
+                    break;
             }
                     
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5 || pilih == 6);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5 || pilih == 6 || pilih == 7);
 
     }
 }

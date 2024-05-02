@@ -2,14 +2,18 @@ package P10.Tugas;
 
 public class Queue15 {
     Pembeli15[] antrian;
+    Pembeli15[] daftarPembeli;
     int front;
     int rear;
     int size;
     int max;
+    int id;
 
     public Queue15(int n) {
         max = n;
         antrian = new Pembeli15[max];
+        daftarPembeli = new Pembeli15[50];
+        id = 0;
         size = 0;
         front = rear = -1;
     }
@@ -45,6 +49,8 @@ public class Queue15 {
             }
             antrian[rear] = antri;
             size++;
+            daftarPembeli[id] = antri;
+            id++;
         }
      }
  
@@ -116,17 +122,16 @@ public class Queue15 {
     }
 
     public void daftarPembeli(){
-        if (!isEmpty()) {
-            int i = front;
-            while (i != rear) {
-                System.out.println(antrian[i]);
-                i = (i + 1) % max;
-            }
-            System.out.println(antrian[i]);
+        if (id == 0) {
+            System.out.println("Daftar pembeli kosong");
         } else {
-            System.out.println("Queue masih kosong");
+            for (int i = 0; i < id; i++) {
+                System.out.println(daftarPembeli[i].nama 
+                + " " + daftarPembeli[i].noHP);
+            }
         }
     }
+    
 
     
 }
