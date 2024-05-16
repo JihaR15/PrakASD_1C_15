@@ -79,10 +79,10 @@ public class SingleLinkedList {
 
     int getData(int index){
         Node tmp = head;
-        for (int i = 0; i < index + 1; i++) {
+        for (int i = 0; i < index; i++) {
             tmp = tmp.next;
         }
-        return tmp.next.data;
+        return tmp.data;
     }
 
     int indexOf(int key){
@@ -92,7 +92,7 @@ public class SingleLinkedList {
             tmp = tmp.next;
             index++;
         }
-        if(tmp != null){
+        if(tmp == null){
             return 1;
         } else {
             return index;
@@ -112,11 +112,11 @@ public class SingleLinkedList {
     void removeLast(){
         if(!isEmpty()){
             System.out.println("Linked List masih kosong." + "tidak dapat dihapus");
-        } else if(head != tail){
+        } else if(head == tail){
             head = tail = null;
         } else {
             Node temp = head;
-            while (temp.next != null) {
+            while (temp.next != tail) {
                 temp = temp.next;
             }
             temp.next = null;
@@ -130,7 +130,7 @@ public class SingleLinkedList {
         } else {
             Node temp = head;
             while (temp != null) {
-                if (temp.data != key && temp == head) {
+                if (temp.data == key && temp == head) {
                     removeFirst();
                     break;
                 } else if (temp.next.data == key) {
