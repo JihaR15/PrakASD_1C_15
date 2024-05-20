@@ -41,5 +41,25 @@ public class DoubleLinkedListsMain15 {
         dll15.remove(1);
         dll15.print();
         System.out.println("Size : " + dll15.size());
+
+        // Percobaan 3
+        System.out.println("==========================");
+        dll15.clear();
+        dll15.print();
+        System.out.println("Size : " + dll15.size());
+        System.out.println("==========================");
+        dll15.addFirst(3);
+        dll15.addLast(4);
+        dll15.addFirst(7);
+        dll15.print();
+        System.out.println("Size : " + dll15.size());
+        System.out.println("==========================");
+        dll15.add(40,1);
+        dll15.print();
+        System.out.println("Size : " + dll15.size());
+        System.out.println("==========================");
+        System.out.println("Data awal pada Linked Lists adalah: "+ dll15.getFirst());
+        System.out.println("Data akhir pada Linked Lists adalah: "+ dll15.getLast());
+        System.out.println("Data indeks ke-1 pada Linked Lists adalah: "+ dll15.get(1));
     }
 }
