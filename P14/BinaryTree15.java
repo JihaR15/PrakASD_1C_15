@@ -165,4 +165,110 @@ public class BinaryTree15 {
         }
     }
 
+    // Tugas Praktikum
+
+    // NO.1
+    void addRekursif(int data){
+        if (!isEmpty()){
+            root = new Node15(data);
+        } else {
+            addRekursif(root, data);
+        }
+    }
+
+    void addRekursif(Node15 current, int data){
+        if(data < current.data){
+            if (current.left == null) {
+                current.left = new Node15(data);
+            } else {
+                addRekursif(current.left, data);
+            }
+        } else if (data > current.data){
+            if (current.right == null) {
+                current.right = new Node15(data);
+            } else {
+                addRekursif(current.right, data);
+            }
+        }
+    }
+
+    // No 2
+
+    Node15 findMin(Node15 data){
+        if (data.left == null) {
+            return data;
+        } else {
+            return findMin(data.left);
+        }
+    }
+
+    Node15 findMax(Node15 data){
+        if (data.right == null) {
+            return data;
+        } else {
+            return findMax(data.right);
+        }
+    }
+
+    void findMinMax(){
+        if (!isEmpty()) {
+            System.out.println("Tree is empty");
+            return;
+        }
+        Node15 min = findMin(root);
+        Node15 max = findMax(root);
+        System.out.println("Min : " + min.data);
+        System.out.println("Max : " + max.data);
+    }
+
+    //No 3
+
+    void printLeaf(Node15 node){
+        if (node.left == null && node.right == null){
+            System.out.print(node.data + " ");
+        } else {
+            if (node.left != null) {
+                printLeaf(node.left);
+            }
+            if (node.right != null) {
+                printLeaf(node.right);
+            }
+        }
+    }
+
+    void printLeaf(){
+        if (!isEmpty()) {
+            System.out.println("Tree is empty");
+            return;
+        }
+        printLeaf(root);
+    }
+
+    // No. 4
+
+    int countLeaf(Node15 node){
+        if (node.left == null && node.right == null) {
+            return 1;
+        } else {
+            int leftCount = 0;
+            int rightCount = 0;
+            if (node.left != null) {
+                leftCount = countLeaf(node.left);
+            }
+            if (node.right != null) {
+                rightCount = countLeaf(node.right);
+            }
+            return leftCount + rightCount;
+        }
+    }
+
+    int countLeaf(){
+        if (!isEmpty()) {
+            System.out.println("Tree is empty");
+            return 0;
+        }
+        return countLeaf(root);
+    }
+
+
 }
