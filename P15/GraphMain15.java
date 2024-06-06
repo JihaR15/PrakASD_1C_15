@@ -1,9 +1,12 @@
 package P15;
 
+import java.util.Scanner;
+
 public class GraphMain15 {
     
     public static void main(String[] args) throws Exception {
         Graph15 gedung15 = new Graph15(6);
+        Scanner sc15 = new Scanner(System.in);
 
         gedung15.addEdge(0, 1, 50);
         gedung15.addEdge(0, 2, 100);
@@ -17,5 +20,25 @@ public class GraphMain15 {
         gedung15.removeEdge(1,3);
         gedung15.printGraph();
         
+        System.out.println("Masukkan gedung asal dan tujuan (ketik 999 pada keduanya untuk keluar)");
+        while (true) {
+            System.out.print("Masukkan gedung asal: ");
+            int asal = sc15.nextInt();
+            System.out.print("Masukkan gedung tujuan: ");
+            int tujuan = sc15.nextInt();
+
+            if (asal == 999 && tujuan == 999) {
+                System.out.println("Program berhenti");
+                break;
+            }
+
+            if (gedung15.isAdjacent(asal, tujuan)) {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+            } else {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
+            } 
+
+
+        }
     }
 }
