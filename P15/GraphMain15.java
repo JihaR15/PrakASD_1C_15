@@ -52,6 +52,14 @@ public class GraphMain15 {
         gdg15.removeEdge(2, 1);
         gdg15.printGraph();
 
+        System.out.println("");
+        gdg15.degree(0);
+        System.out.println("");
+        gdg15.degree(1);
+        System.out.println("");
+        gdg15.degree(2);
+        System.out.println("");
+        gdg15.degree(3);
     }
     
 }
