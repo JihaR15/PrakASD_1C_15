@@ -89,5 +89,16 @@ public class DoubleLinkedList15 {
         }
         return tmp.data;
     } 
+
+    public void updateJarak(int index, int jarak) throws Exception {
+        if (index < 0 || index >= size()) {
+            throw new Exception("Index out of bounds");
+        }
+        Node15 temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        temp.jarak = jarak;
+    }
 }
 
